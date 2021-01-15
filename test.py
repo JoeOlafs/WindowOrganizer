@@ -1,3 +1,4 @@
+import pygetwindow as gw
 from itertools import groupby
 def smaller_than_3(x):
      return x<3
