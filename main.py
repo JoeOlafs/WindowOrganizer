@@ -2,8 +2,10 @@
 import pygetwindow as gw
 from itertools import groupby
 
-openWindow = [1, 2, 3]
+openWindow = ([1, 2, 3])
 allWindows = [gw.getAllTitles()]
-print(gw.getActiveWindow().title)
+#print(gw.getActiveWindow().title)
 
-print(allWindows)
+#print(allWindows)
+Window = allWindows[0]
+print(openWindow)
