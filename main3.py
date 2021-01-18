@@ -1,11 +1,7 @@
 from pywinauto import Desktop
-import win32gui
 
-#windows = Desktop(backend="uia").windows()
-#print([w.windows_text() for w in windows])
-
-def winEnumHandler(hwnd, ctx):
-    if win32gui.IsWindowVisible(hwnd):
-        print(hex(hwnd), win32gui.GetWindowText(hwnd))
-
-win32gui.EnumWindows(winEnumHandler, None)
+windows = Desktop(backend="uia").windows()
+windowList = ([w.window_text() for w in windows])
+if 'Taskbar', '', 'Overwolf Quick Launcher' in windowList:
+    windowList.remove('Taskbar', '', 'Overwolf Quick Launcher')
+    print(windowList)
