@@ -3,10 +3,13 @@
 #Resizes and organizes open windows on your desktop
 
 from pywinauto import Desktop
+import ExcludeFromList
 
 windows = Desktop(backend="uia").windows()
 windowList = ([w.window_text() for w in windows])
 print(windowList)
-#if 'Taskbar', '', 'Overwolf Quick Launcher' in windowList:
+ExcludeFromList.__remove__(windowList)
+print(windowList)
+#if 'Taskbar' in windowList:
  #   windowList.remove('Taskbar', '', 'Overwolf Quick Launcher')
   #  print(windowList)
