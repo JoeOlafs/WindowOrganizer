@@ -4,12 +4,11 @@
 
 from pywinauto import Desktop
 import ExcludeFromList
+#import Visibility
 
 windows = Desktop(backend="uia").windows()
 windowList = ([w.window_text() for w in windows])
 print(windowList)
 ExcludeFromList.__remove__(windowList)
 print(windowList)
-#if 'Taskbar' in windowList:
- #   windowList.remove('Taskbar', '', 'Overwolf Quick Launcher')
-  #  print(windowList)
+#Visibility.__isVisible__(windowList)
