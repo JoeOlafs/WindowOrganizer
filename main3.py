@@ -8,8 +8,6 @@ import Visibility
 
 windows = Desktop(backend="uia").windows()
 windowList = ([w.window_text() for w in windows])
-#print(windowList)
 ExcludeFromList.__remove__(windowList)
-#print(windowList)
 Visibility.__notMinimized__(windowList)
 print(windowList)
