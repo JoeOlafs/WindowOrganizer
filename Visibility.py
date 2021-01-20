@@ -8,7 +8,7 @@ def __notMinimized__(list):
         if Window.isMinimized:
             print(program + ' is minimized')
             isMinimized.append(program)
-        if Window.isMinimized == False:
+        elif Window.isMinimized == False:
             print(program + ' is not minimized')
             isNotMinimized.append(program)
 
