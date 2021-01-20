@@ -1,3 +1,5 @@
 test.py
 WindowManager-checklist.txt
 .vscode
+__pycache__/ExcludeFromList.cpython-39.pyc
+__pycache__/Visibility.cpython-39.pyc
