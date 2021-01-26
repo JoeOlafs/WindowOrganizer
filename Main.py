@@ -19,7 +19,8 @@ print("List length: " + str(len(windowList)))
 for program in windowList:
     Window = gw.getWindowsWithTitle(program)[0]
     print(Window)
-    
+
+print(windowList)    
 Resize.__resize__(windowList)
     #if "Google Chrome" in program:
     #    chrome = program
