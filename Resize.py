@@ -29,13 +29,16 @@ def __resize__(prog):
         prog0.restore()
         prog0.resizeTo(960,1080)
         prog0.moveTo(-1920,0)
+        print(prog0.size)
 
         prog1 = gw.getWindowsWithTitle(str(prog[1]))[0]
         prog1.restore()
         prog1.resizeTo(960,1080)
         prog1.moveTo(-960,0)
+        print(prog1.size)
 
         prog2 = gw.getWindowsWithTitle(str(prog[2]))[0]
         prog2.restore()
         prog2.moveTo(0,0)
         prog2.maximize()
+        print(prog2.size)

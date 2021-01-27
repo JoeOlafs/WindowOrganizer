@@ -1,5 +1,7 @@
 import pygetwindow as gw
 from itertools import groupby
+import vmi
+
 def smaller_than_3(x):
      return x<3
 
@@ -23,3 +25,8 @@ if notepadWindow.isMinimized:
     print("true")
 else:
     print("false")
+
+obj = vmi.VMI().Win32_PnPEntity(ConfigManagerErrorCode=0)
+displays = [x for x in obj if 'DISPLAY' in str(x)]
+for item in displays:
+     print(item)
