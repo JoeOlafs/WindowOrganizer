@@ -1,5 +1,6 @@
 import pygetwindow as gw
 from itertools import groupby
+import pyglet
 import vmi
 
 def smaller_than_3(x):
@@ -20,13 +21,18 @@ mylist = [1,2,3]
 for x in mylist:
      print(x)
 
-notepadWindow = gw.getWindowsWithTitle('Untitled')[0]
-if notepadWindow.isMinimized:
-    print("true")
-else:
-    print("false")
+
+#window = pyglet.window.Window()
+#context = window.context
+#config = context.config
+#config.double_buffer
+#config.stereo
+#config.sample_buffers
+
+#platform = pyglet.window.get_platform()
+#display = platform.get_display()
+#for screen in display.get_screens():
+#     print(screen)
 
 obj = vmi.VMI().Win32_PnPEntity(ConfigManagerErrorCode=0)
-displays = [x for x in obj if 'DISPLAY' in str(x)]
-for item in displays:
-     print(item)
+displays = [x for x in obj]
