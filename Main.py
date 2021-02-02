@@ -6,9 +6,10 @@ from pywinauto import Desktop
 import pygetwindow as gw
 import ExcludeFromList
 import Visibility
-import Resize
+import ResizeDual
+import ListMonitors
 
-chrome = ""
+monitors = ListMonitors.Monitors()
 
 windows = Desktop(backend="uia").windows()
 windowList = ([w.window_text() for w in windows])
@@ -20,9 +21,8 @@ for program in windowList:
     Window = gw.getWindowsWithTitle(program)[0]
     print(Window)
 
-print(windowList)    
-Resize.__resize__(windowList)
-    #if "Google Chrome" in program:
-    #    chrome = program
-        
-#chrome.resizeTo(260,260)
+#print(windowList)
+if len(monitors) == 1:
+    print('not ready')
+elif len(monitors) == 2:
+    ResizeDual.__resize__(windowList)
