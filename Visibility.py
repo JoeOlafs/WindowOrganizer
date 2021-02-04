@@ -6,10 +6,10 @@ def __notMinimized__(list):
     for program in list:
         Window = gw.getWindowsWithTitle(program)[0]
         if Window.isMinimized:
-            print(program + ' is minimized')
+            #print(program + ' is minimized')
             isMinimized.append(program)
         elif Window.isMinimized == False:
-            print(program + ' is not minimized')
+            #print(program + ' is not minimized')
             isNotMinimized.append(program)
 
     for prog in isMinimized:
