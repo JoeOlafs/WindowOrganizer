@@ -22,7 +22,7 @@ def __resize__(prog):
 
         prog1 = gw.getWindowsWithTitle(str(prog[1]))[0]
         prog1.restore()
-        prog1.moveTo(0,0)
+        prog1.moveTo(-1920,0)
         prog1.maximize()
     if len(prog) == 3:
         prog0 = gw.getWindowsWithTitle(str(prog[0]))[0]
