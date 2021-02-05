@@ -17,7 +17,8 @@ def __job__():
           Window = gw.getWindowsWithTitle(program)[0]
           print(Window)
      monitors = ListMonitors.Monitors()
+     print(len(monitors))
      #if len(monitors) == 1:
-     #    ResizeSingle.__resize__(windowList)
-     #elif len(monitors) == 2:
+     #     ResizeSingle.__resize__(windowList)
+     #if len(monitors) == 2:
      #     ResizeDual.__resize__(windowList)

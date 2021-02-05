@@ -11,36 +11,49 @@ def __resize__(prog):
         prog0 = str(prog[0])
         print(prog0)
         window = gw.getWindowsWithTitle(str(prog[0]))[0]
-        window.maximize()
-        
+        window.maximize()    
     if len(prog) == 2:
         prog0 = gw.getWindowsWithTitle(str(prog[0]))[0]
         prog0.restore()
-        prog0.resizeTo(960,1080)
-        prog0.moveTo(0,0)
-        print(prog0.size)
+        prog0.resizeTo(976,1080)
+        prog0.moveTo(-7,0)
 
         prog1 = gw.getWindowsWithTitle(str(prog[1]))[0]
         prog1.restore()
-        prog1.resizeTo(960,1080)
+        prog1.resizeTo(976,1080)
         prog1.moveTo(960,0)
-        print(prog1.size)
-
     if len(prog) == 3:
         prog0 = gw.getWindowsWithTitle(str(prog[0]))[0]
         prog0.restore()
-        prog0.resizeTo(960,520)
-        prog0.moveTo(0,0)
-        print(prog0.size)
-
+        prog0.resizeTo(976,532)
+        prog0.moveTo(-7,0)
+        
         prog1 = gw.getWindowsWithTitle(str(prog[1]))[0]
         prog1.restore()
-        prog1.resizeTo(960,520)
-        prog1.moveTo(0,520)
-        print(prog1.size)
-
+        prog1.resizeTo(976,1080)
+        prog1.moveTo(960,0)
+        
         prog2 = gw.getWindowsWithTitle(str(prog[2]))[0]
         prog2.restore()
-        prog2.resizeTo(960,1080)
-        prog2.moveTo(960,0)
-        print(prog2.size)
+        prog2.resizeTo(976,532)
+        prog2.moveTo(-7,525)
+    if len(prog) == 4:
+        prog0 = gw.getWindowsWithTitle(str(prog[0]))[0]
+        prog0.restore()
+        prog0.resizeTo(976,532)
+        prog0.moveTo(-7,0)
+        
+        prog1 = gw.getWindowsWithTitle(str(prog[1]))[0]
+        prog1.restore()
+        prog1.resizeTo(976,532)
+        prog1.moveTo(960,0)
+        
+        prog2 = gw.getWindowsWithTitle(str(prog[2]))[0]
+        prog2.restore()
+        prog2.resizeTo(976,532)
+        prog2.moveTo(-7,525)
+        
+        prog3 = gw.getWindowsWithTitle(str(prog[3]))[0]
+        prog3.restore()
+        prog3.resizeTo(976,532)
+        prog3.moveTo(960,525)
