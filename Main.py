@@ -12,8 +12,7 @@ if __name__ == '__main__':
     while True:
         try:
             RunScript.__job__()
-        except IndexError:
-            print('IndexError')
+        except IndexError as err:
             errCount += 1
         finally:
             timer = time.time()-start
