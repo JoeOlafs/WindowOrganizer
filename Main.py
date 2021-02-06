@@ -13,8 +13,8 @@ def __job__():
      Visibility.__notMinimized__(windowList)
      print("List length: " + str(len(windowList)))
 
-     # add if loop - int = len(windowList) stays the same -> do nothing
-     # else - run rest of script and update int = len(windowList)
+     #Add loop - if len(windowList) stays the same, do nothing
+     #Else - run main script and update int len(windowList)
      for program in windowList:
           Window = gw.getWindowsWithTitle(program)[0]
           print(Window)
