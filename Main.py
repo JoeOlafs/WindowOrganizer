@@ -5,22 +5,25 @@ import Visibility
 import ResizeSingle
 import ResizeDual
 import ListMonitors
+import Run
 
 def __job__():
      windows = Desktop(backend="uia").windows()
      windowList = ([w.window_text() for w in windows])
      ExcludeFromList.__remove__(windowList)
      Visibility.__notMinimized__(windowList)
-     print("List length: " + str(len(windowList)))
-
-     #Add loop - if len(windowList) stays the same, do nothing
-     #Else - run main script and update int len(windowList)
-     for program in windowList:
-          Window = gw.getWindowsWithTitle(program)[0]
-          print(Window)
      monitors = ListMonitors.Monitors()
-     print(len(monitors))
-     #if len(monitors) == 1:
-     #     ResizeSingle.__resize__(windowList)
-     #if len(monitors) == 2:
-     #     ResizeDual.__resize__(windowList)
+
+     if len(windowList) == Run.numWindow:
+          print('Number of window stays the same')
+     else:
+          Run.numWindow = len(windowList)
+          print("List length: " + str(len(windowList)))
+          for program in windowList:
+               Window = gw.getWindowsWithTitle(program)[0]
+               print(Window)
+          print(len(monitors))
+          if len(monitors) == 1:
+               ResizeSingle.__resize__(windowList)
+          if len(monitors) == 2:
+               ResizeDual.__resize__(windowList)

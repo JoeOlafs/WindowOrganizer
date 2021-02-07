@@ -7,6 +7,7 @@ import Main
 
 start = time.time()
 errCount = 0
+numWindow = 0
 
 if __name__ == '__main__':
     while True:
