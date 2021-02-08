@@ -9,7 +9,7 @@ start = time.time()
 errCount = 0
 numWindow = 0
 
-# The program runs every second
+# The program runs constantly
 if __name__ == '__main__':
     while True:
         try:
@@ -20,4 +20,3 @@ if __name__ == '__main__':
             timer = time.time()-start
             print('err count: ' + str(errCount))
             print(f'has been running for: '+ str(timer))
-            time.sleep(1)
