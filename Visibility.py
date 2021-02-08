@@ -5,7 +5,7 @@ def __notMinimized__(list):
     isMinimized = []
     isNotMinimized = []
 
-    # Arrange programs depening if they have been minimized or not
+    # Function to remove programs that have been minimized
     for program in list:
         Window = gw.getWindowsWithTitle(program)[0]
         if Window.isMinimized:
