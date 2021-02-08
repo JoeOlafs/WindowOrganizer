@@ -4,7 +4,7 @@ import re
 
 def Monitors():
      # Uses powershell to get info about connected monitors
-     proc = subprocess.Popen(['powershell', 'Get-WmiObject win32_desktopmonitor'], stdout=subprocess.PIPE)
+     proc = subprocess.Popen(['powershell', 'Get-CimInstance -Namespace root\wmi -ClassName WmiMonitorBasicDisplayParams'], stdout=subprocess.PIPE)
      res = proc.communicate()
-     monitors = re.findall('(?s)\r\nDeviceID\s+:\s(.*?)\r\n',res[0].decode("utf-8"))
+     monitors = re.findall('(?s)\r\nInstanceName\s+:\s(.*?)\r\n',res[0].decode("utf-8"))
      return monitors
