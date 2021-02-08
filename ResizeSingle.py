@@ -15,12 +15,12 @@ def __resize__(prog):
     if len(prog) == 2:
         prog0 = gw.getWindowsWithTitle(str(prog[0]))[0]
         prog0.restore()
-        prog0.resizeTo(976,1080)
+        prog0.resizeTo(976,1050)
         prog0.moveTo(-7,0)
 
         prog1 = gw.getWindowsWithTitle(str(prog[1]))[0]
         prog1.restore()
-        prog1.resizeTo(976,1080)
+        prog1.resizeTo(976,1050)
         prog1.moveTo(960,0)
     if len(prog) == 3:
         prog0 = gw.getWindowsWithTitle(str(prog[0]))[0]

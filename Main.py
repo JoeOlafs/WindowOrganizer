@@ -28,10 +28,17 @@ def __job__():
           for program in windowList:
                Window = gw.getWindowsWithTitle(program)[0]
                print(Window)
-          print(len(monitors))
+          print('num Monitors: ' + str(len(monitors)))
 
           # Arranges windows depending on number of connected monitors
-          if len(monitors) == 1:
-               ResizeSingle.__resize__(windowList)
-          if len(monitors) == 2:
-               ResizeDual.__resize__(windowList)
+          count = 0
+          while count <=3:
+               if len(monitors) == 1:
+                    ResizeSingle.__resize__(windowList)
+                    print('Count: ' + str(count))
+                    count += 1
+               if len(monitors) == 2:
+                    ResizeDual.__resize__(windowList)
+                    print('Count: ' + str(count))
+                    count += 1
+               
