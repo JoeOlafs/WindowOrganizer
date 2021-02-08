@@ -6,7 +6,7 @@ def __resize__(prog):
 
     if len(prog) == 0:
         print("No Windows Open")
-
+ 
     if len(prog) == 1:
         prog0 = str(prog[0])
         print(prog0)
