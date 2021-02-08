@@ -33,11 +33,11 @@ def __job__():
 
           # Arranges windows depending on number of connected monitors
           count = 0
-          if len(monitors) == 1:
-               ResizeSingle.__resize__(windowList)
-               print('Count: ' + str(count))
-          if len(monitors) == 2:
-               #ResizeSingle.__resize__(windowList) #for testint purposes, while List monitors is not working properly
-               ResizeDual.__resize__(windowList)
-               print('Count: ' + str(count))
-               
+          while count <= 3:
+               if len(monitors) == 1:
+                    ResizeSingle.__resize__(windowList)
+                    count += 1
+               if len(monitors) == 2:
+                    #ResizeSingle.__resize__(windowList) #for testint purposes, while List monitors is not working properly
+                    ResizeDual.__resize__(windowList)
+                    count += 1
