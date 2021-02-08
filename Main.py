@@ -6,7 +6,7 @@ import ResizeSingle
 import ResizeDual
 import ListMonitors
 import Run
-import time
+import ListToTuple
 
 def __job__():
      # Gets all open windows, runs through the list of excluded programs and sorts by visibility
@@ -28,17 +28,17 @@ def __job__():
           for program in windowList:
                Window = gw.getWindowsWithTitle(program)[0]
                print(Window)
-          print('num Monitors: ' + str(len(monitors)))
+          windowList = tuple(windowList)
+          #print(type(progTuple))
+          #print('num Monitors: ' + str(len(monitors)))
 
           # Arranges windows depending on number of connected monitors
           count = 0
-          while count <=3:
-               if len(monitors) == 1:
-                    ResizeSingle.__resize__(windowList)
-                    print('Count: ' + str(count))
-                    count += 1
-               if len(monitors) == 2:
-                    ResizeDual.__resize__(windowList)
-                    print('Count: ' + str(count))
-                    count += 1
+          if len(monitors) == 1:
+               ResizeSingle.__resize__(windowList)
+               print('Count: ' + str(count))
+          if len(monitors) == 2:
+               #ResizeSingle.__resize__(windowList) #for testint purposes, while List monitors is not working properly
+               ResizeDual.__resize__(windowList)
+               print('Count: ' + str(count))
                

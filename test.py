@@ -1,3 +1,6 @@
 import Main
+import ListToTuple
+list = [1,2,3,4,5]
+list = tuple(list)
 
-Main.__job__()
+print(type(list))
