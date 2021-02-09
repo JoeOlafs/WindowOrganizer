@@ -9,10 +9,10 @@ start = time.time()
 numWindow = 0
 
 # The program runs constantly
-def __run__():
-    errCount = 0
 
+def __Main__():
     if __name__ == '__main__':
+        errCount = 0
         while True:
             try:
                 Main.__job__()
@@ -22,3 +22,5 @@ def __run__():
                 timer = time.time()-start
                 print('err count: ' + str(errCount))
                 print(f'has been running for: '+ str(timer))
+
+__Main__()
