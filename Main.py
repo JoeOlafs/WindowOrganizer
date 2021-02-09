@@ -4,7 +4,6 @@ import ExcludeFromList
 import Visibility
 import ResizeSingle
 import ResizeDual
-import ListMonitors
 import Run
 
 def __job__():
@@ -15,10 +14,11 @@ def __job__():
      Visibility.__notMinimized__(windowList)
 
      # Checks for ammount of monitors
-     monitors = ListMonitors.Monitors()
+
+     monitorLen = len(Run.monitors)
 
      # Checks if a new window has been opened or a window has been closed
-     if len(windowList) == Run.numWindow:
+     if len(windowList) == Run.numWindow and len(Run.monitors) == monitorLen:
           print('Number of window stays the same')
      else:
           Run.numWindow = len(windowList) # Updates the number of open windows
@@ -29,15 +29,12 @@ def __job__():
                print(Window)
           windowList = tuple(windowList)
 
-          #print('num Monitors: ' + str(len(monitors)))
-
           # Arranges windows depending on number of connected monitors
           count = 0
           while count <= 3:
-               if len(monitors) == 1:
+               if monitorLen == 1:
                     ResizeSingle.__resize__(windowList)
                     count += 1
-               if len(monitors) == 2:
-                    #ResizeSingle.__resize__(windowList) #for testint purposes, while List monitors is not working properly
+               if monitorLen == 2:
                     ResizeDual.__resize__(windowList)
                     count += 1

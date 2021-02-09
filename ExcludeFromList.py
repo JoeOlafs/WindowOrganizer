@@ -5,7 +5,7 @@ def __remove__(list):
     # List of programs and overlays that will not be arranged by the program
     exclude = ['Taskbar', 'Overwolf Quick Launcher',
      'NVIDIA GeForce Overlay', 'Screen share viewing options',
-     'Program Manager', '']
+     'Program Manager', 'Messenger Call - Google Chrome', '']
 
     # Add programs that are open to a list, 
     for program in exclude:

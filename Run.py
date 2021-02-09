@@ -4,17 +4,23 @@
 
 import time
 import Main
+import traceback
+import ListMonitors
 
 start = time.time()
-errCount = 0
 numWindow = 0
+monitors = ListMonitors.Monitors()
 
 # The program runs constantly
-if __name__ == '__main__':
+
+def MainApp():
+    #if __name__ == '__main__':
+    errCount = 0
     while True:
         try:
             Main.__job__()
         except IndexError as err: # Ignores an common error in program, keeps track of how often it occurs
+            traceback.print_exc()
             errCount += 1
         finally: # Additional info while running in an IDE
             timer = time.time()-start
