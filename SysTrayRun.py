@@ -8,8 +8,6 @@ tray = sg.SystemTray(menu=menu_def, filename=r'appIcon.ico')
 while True:
      menu_item = tray.Read()
      print(menu_item)
-     #if menu_item == 'Run':
-     #     Run.__Main__()
      if menu_item == 'Stop':
           break
      elif menu_item.startswith('Run'):

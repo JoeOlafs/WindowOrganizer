@@ -5,9 +5,11 @@
 import time
 import Main
 import traceback
+import ListMonitors
 
 start = time.time()
 numWindow = 0
+monitors = ListMonitors.Monitors()
 
 # The program runs constantly
 
@@ -24,5 +26,3 @@ def MainApp():
             timer = time.time()-start
             print('err count: ' + str(errCount))
             print(f'has been running for: '+ str(timer))
-
-MainApp()
