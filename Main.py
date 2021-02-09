@@ -16,9 +16,10 @@ def __job__():
 
      # Checks for ammount of monitors
      monitors = ListMonitors.Monitors()
+     monitorLen = len(monitors)
 
      # Checks if a new window has been opened or a window has been closed
-     if len(windowList) == Run.numWindow:
+     if len(windowList) == Run.numWindow and len(monitors) == monitorLen:
           print('Number of window stays the same')
      else:
           Run.numWindow = len(windowList) # Updates the number of open windows

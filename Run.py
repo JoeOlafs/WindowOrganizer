@@ -16,7 +16,7 @@ def __Main__():
         while True:
             try:
                 Main.__job__()
-            except IndexError as err: # Ignores an common error in program, keeps track of how often it occurs
+            #except IndexError as err: # Ignores an common error in program, keeps track of how often it occurs
                 errCount += 1
             finally: # Additional info while running in an IDE
                 timer = time.time()-start
