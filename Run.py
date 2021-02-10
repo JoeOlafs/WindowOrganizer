@@ -22,6 +22,9 @@ def MainApp():
         except IndexError as err: # Ignores an common error in program, keeps track of how often it occurs
             traceback.print_exc()
             errCount += 1
+        except:
+            traceback.print_exc()
+            errCount += 1
         finally: # Additional info while running in an IDE
             timer = time.time()-start
             print('err count: ' + str(errCount))
