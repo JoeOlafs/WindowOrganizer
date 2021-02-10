@@ -1,7 +1,7 @@
 import PySimpleGUIQt as sg
 import Run
 
-menu_def = ['BLANK',['Window Organizer','---','Run', 'Info', 'Stop']]
+menu_def = ['test',['Window Organizer','---','Run', 'Info', 'Stop']]
 
 tray = sg.SystemTray(menu=menu_def, filename=r'appIcon.ico')
 
