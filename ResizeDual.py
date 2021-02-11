@@ -1,7 +1,7 @@
 import pygetwindow as gw
 
 def __resize__(prog):
-    print(len(prog))
+    #print(len(prog))
 
     if len(prog) == 0:
         print("No Windows Open")
@@ -10,7 +10,6 @@ def __resize__(prog):
         print(prog0)
         window = gw.getWindowsWithTitle(str(prog[0]))[0]
         window.maximize()
-        print("Window Maximized")
     if len(prog) == 2:
         prog0 = gw.getWindowsWithTitle(str(prog[0]))[0]
         prog0.restore()
