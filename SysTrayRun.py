@@ -27,5 +27,10 @@ while True:
                sg.Popup('Error starting app', menu_item)
      elif menu_item == 'Info':
           sg.Popup('Menu Item Chosen', menu_item)
-     elif QSystemTrayIcon.Trigger == True:
-          break
+     elif menu_item == sg.EVENT_SYSTEM_TRAY_ICON_DOUBLE_CLICKED:
+          try:
+               Run.MainApp()
+          except:
+               sg.Popup('Error starting app')
+          if menu_item == sg.EVENT_SYSTEM_TRAY_ICON_ACTIVATED:
+               break
