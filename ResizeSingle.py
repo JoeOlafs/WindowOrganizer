@@ -1,8 +1,8 @@
 import pygetwindow as gw
 
 def __resize__(prog):
-    print(prog[0])
-    print(len(prog))
+    #print(prog[0])
+    #print(len(prog))
 
     if len(prog) == 0:
         print("No Windows Open")
