@@ -6,6 +6,7 @@ import time
 import Main
 import traceback
 import ListMonitors
+#import SysTrayRun
 
 start = time.time()
 numWindow = 0
@@ -29,3 +30,7 @@ def MainApp():
             print('err count: ' + str(errCount))
             print(f'has been running for: '+ str(timer))
             time.sleep(1)
+
+#while SysTrayRun.run_main == True:
+#    print('TEST')
+#    MainApp()
