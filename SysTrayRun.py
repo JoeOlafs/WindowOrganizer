@@ -1,5 +1,15 @@
 import PySimpleGUIQt as sg
 from PySimpleGUIQt.PySimpleGUIQt import EVENT_SYSTEM_TRAY_ICON_DOUBLE_CLICKED
+def init(self, tray_visible, window_visible, window_closed, run_main):
+     self.tray_visible = tray_visible
+     self.window_visible = window_visible
+     self.window_closed = window_visible
+     self.run_main = run_main
+
+tray_visible = True
+window_visible = False
+window_closed = False
+run_main = False
 
 def SysTray():
      menu_def = ['BLANK',['Window Organizer','---','&Run', 'Info', '&Stop', '&Close']]
@@ -9,7 +19,7 @@ def SysTray():
      layout = [[sg.Text('Window Organizer')], [sg.Button('Close')]]
 
      window = sg.Window('Window Organizer').Layout(layout)
-
+     #init(appTray, True, False, False, False)
      tray_visible = True
      window_visible = False
      window_closed = False
@@ -40,6 +50,7 @@ def SysTray():
                     window_visible = False
                     window_closed = False
                     run_main = True
+                    print(run_main)
                elif menu_item == 'Stop' or menu_item == sg.EVENT_SYSTEM_TRAY_ICON_DOUBLE_CLICKED:
                     print('Stopping Main')
                     run_main = False

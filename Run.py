@@ -33,5 +33,6 @@ def MainApp():
 
 
 SysTrayRun.SysTray()
-if SysTrayRun.run_main == True:
-    MainApp()
+while True:
+    if SysTrayRun.run_main:
+        print('run')
