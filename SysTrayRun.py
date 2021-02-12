@@ -1,36 +1,52 @@
-from PySide2.QtWidgets import QSystemTrayIcon
 import PySimpleGUIQt as sg
-from PySimpleGUIQt.PySimpleGUIQt import EVENT_SYSTEM_TRAY_ICON_ACTIVATED
+from PySimpleGUIQt.PySimpleGUIQt import EVENT_SYSTEM_TRAY_ICON_DOUBLE_CLICKED
 import Run
 
-menu_def = ['BLANK',['Window Organizer','---','&Run', 'Info', '&Stop']]
-
+menu_def = ['BLANK',['Window Organizer','---','&Run', 'Info', '&Stop', '&Close']]
 tray = sg.SystemTray(menu=menu_def, filename=r'appIcon.ico')
+tray.Hide()
+
+layout = [[sg.Text('Window Organizer')],[sg.Button('Minimize to Tray')]]
+
+window = sg.Window('Window Organizer').Layout(layout)
+
+tray_visible = True
+window_visible = False
+window_closed = False
+run_main = False
 
 while True:
-     menu_item = tray.Read()
-     print(menu_item)
-#     if tray.Read(EVENT_SYSTEM_TRAY_ICON_ACTIVATED):
-#          sg.Popup('ACTIVATED')
-#          try:
-#               Run.MainApp()
-#          except:
-#               sg.Popup('Error starting app')
-     if menu_item == 'Stop':
-          break
-     elif menu_item.startswith('Run'):
-          try:
+     if window_visible:
+          event, values = window.Read()
+          print(event)
+          if event is None:
+               tray.UnHide()
+               tray_visible = True
+               window_visible = False
+               window_closed = True
+          elif event == 'Minimize to Tray':
+               print('Minimizing to tray')
+               window.Hide()
+               tray.UnHide()
+               tray_visible = True
+               window_visible = False
+               window_closed = True
+     if tray_visible:
+          menu_item = tray.Read()
+          if menu_item == 'Run' or menu_item == sg.EVENT_SYSTEM_TRAY_ICON_ACTIVATED:
+               print('Running Main')
+               tray.UnHide()
+               window.UnHide()
+               tray_visible = True
+               window_visible = True
+               window_closed = False
+               run_main = True
                Run.MainApp()
-          except:
-               if QSystemTrayIcon.Trigger:
-                    break
-               sg.Popup('Error starting app', menu_item)
-     elif menu_item == 'Info':
-          sg.Popup('Menu Item Chosen', menu_item)
-     elif menu_item == sg.EVENT_SYSTEM_TRAY_ICON_DOUBLE_CLICKED:
-          try:
-               Run.MainApp()
-          except:
-               sg.Popup('Error starting app')
-          if menu_item == sg.EVENT_SYSTEM_TRAY_ICON_ACTIVATED:
+               #while Run.MainApp():
+               #     if menu_item == 'Stop' or menu_item == sg.EVENT_SYSTEM_TRAY_ICON_DOUBLE_CLICKED:
+               #          run_main = False
+               #          tray_visible = True
+               #          window_visible = False
+               #          window_closed = False
+          elif menu_item == 'Close' or menu_item == sg.EVENT_SYSTEM_TRAY_ICON_DOUBLE_CLICKED:
                break

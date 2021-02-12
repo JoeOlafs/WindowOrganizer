@@ -12,7 +12,6 @@ numWindow = 0
 monitors = ListMonitors.Monitors()
 
 # The program runs constantly
-
 def MainApp():
     #if __name__ == '__main__':
     errCount = 0
