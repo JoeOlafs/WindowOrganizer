@@ -6,7 +6,6 @@ import time
 import Main
 import traceback
 import ListMonitors
-#import SysTrayRun
 
 start = time.time()
 numWindow = 0
@@ -16,6 +15,7 @@ monitors = ListMonitors.Monitors()
 def MainApp():
     #if __name__ == '__main__':
     errCount = 0
+
     while True:
         try:
             Main.__job__()
@@ -30,7 +30,3 @@ def MainApp():
             print('err count: ' + str(errCount))
             print(f'has been running for: '+ str(timer))
             time.sleep(1)
-
-#while SysTrayRun.run_main == True:
-#    print('TEST')
-#    MainApp()
