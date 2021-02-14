@@ -4,7 +4,10 @@ import ExcludeFromList
 import Visibility
 import ResizeSingle
 import ResizeDual
-import Run
+import ListMonitors
+
+numWindow = 0
+monitors = ListMonitors.Monitors()
 
 def __job__():
      # Gets all open windows, runs through the list of excluded programs and sorts by visibility
@@ -15,14 +18,14 @@ def __job__():
 
      # Checks for ammount of monitors
 
-     monitorLen = len(Run.monitors)
+     monitorLen = len(monitors)
 
      # Checks if a new window has been opened or a window has been closed
-     if len(windowList) == Run.numWindow and len(Run.monitors) == monitorLen:
+     if len(windowList) == numWindow and len(monitors) == monitorLen:
           #null = 'null'
           print('Number of window stays the same')
      else:
-          Run.numWindow = len(windowList) # Updates the number of open windows
+          numWindow = len(windowList) # Updates the number of open windows
           print("List length: " + str(len(windowList)))
           # Additional checks when running in IDE
           for program in windowList:

@@ -6,7 +6,7 @@ def __remove__(list):
     exclude = ['Taskbar', 'Overwolf Quick Launcher',
      'NVIDIA GeForce Overlay', 'Screen share viewing options',
      'Program Manager', 'python', 'Python', 'pythonw', 'Pythonw',
-     'Messenger Call - Google Chrome', '']
+     'Messenger Call - Google Chrome', 'Window Organizer','']
 
     # Add programs that are open to a list, 
     for program in exclude:
